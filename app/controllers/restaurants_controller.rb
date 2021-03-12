@@ -18,7 +18,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
-      render json: @restaurant, status: :created, location: @restaurant, except: [:create, :updated_at]
+      render json: @restaurant, status: :created, location: @restaurant, except: [:create, :updated_at, :style_id], include: [:style]
     else
       render json: @restaurant.errors, status: :unprocessable_entity
     end
