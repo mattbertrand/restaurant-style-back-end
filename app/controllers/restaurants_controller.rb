@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
 
-    render json: @restaurants
+    render json: @restaurants, except: [:created_at, :updated_at]
   end
 
   # GET /restaurants/1
