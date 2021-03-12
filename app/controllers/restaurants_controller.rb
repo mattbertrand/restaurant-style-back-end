@@ -27,7 +27,7 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   def update
     if @restaurant.update(restaurant_params)
-      render json: @restaurant
+      render json: @restaurant, except: [:created_at, :updated_at, :style_id], include: [:style]
     else
       render json: @restaurant.errors, status: :unprocessable_entity
     end
