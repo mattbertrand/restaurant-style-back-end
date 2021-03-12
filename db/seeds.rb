@@ -6,11 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+style_1 = Style.create(title: "French")
+style_2 = Style.create(title: "American Farm to Table")
+style_3 = Style.create(title: "Brewery")
+style_4 = Style.create(title: "American Fine dining")
+
 Restaurant.create([
-    {name: "Crave", city: "Novato"},
-    {name: "Barrel House Tavern", city: "Sausalito"},
-    {name: "Brewster", city: "Petaluma"},
-    {name: "Bungalow 44", city: "Mill Valley"},
-    {name: "Chez Maman", city: "San Francisco"},
-    {name: "Left Bank", city: "Larkspur"}
+    {name: "Crave", city: "Novato", style: style_2},
+    {name: "Barrel House Tavern", city: "Sausalito", style: style_2},
+    {name: "Brewster", city: "Petaluma", style: style_3},
+    {name: "Bungalow 44", city: "Mill Valley", style: style_4},
+    {name: "Chez Maman", city: "San Francisco", style: style_1},
+    {name: "Left Bank", city: "Larkspur", style: style_1}
 ])
